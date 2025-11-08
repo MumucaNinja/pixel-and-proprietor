@@ -1,73 +1,88 @@
-# Welcome to your Lovable project
+# WebLocal — Sites para comércios locais
 
-## Project info
+Site-base (template) para criação de sites profissionais para comércios locais. Projeto demo gerado com Vite + React + TypeScript, utilizando UI primitives (Radix / shadcn-ui) e Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/c7109833-57df-4fed-8170-eff21c4edf69
+Demo/Origem: https://lovable.dev/projects/c7109833-57df-4fed-8170-eff21c4edf69
 
-## How can I edit this code?
+## Visão geral
 
-There are several ways of editing your application.
+- Propósito: landing page / site institucional para pequenos comércios que precisam de presença online rápida e profissional.
+- Público-alvo: desenvolvedores que customizam o template e proprietários que contratam a criação do site.
 
-**Use Lovable**
+## Tecnologias
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c7109833-57df-4fed-8170-eff21c4edf69) and start prompting.
+- Vite (bundler / dev server)
+- React + TypeScript
+- Tailwind CSS + tailwind-merge
+- shadcn-ui / Radix primitives (componentes UI)
+- react-router-dom (navegação básica)
+- @tanstack/react-query (cache/requests)
+- sonner (toasts)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Estrutura importante do projeto
 
-**Use your preferred IDE**
+- `src/` — código-fonte React
+	- `App.tsx` — root do app, providers (QueryClient, router, tooltips, toasters)
+	- `main.tsx` — bootstrap da app
+	- `pages/Index.tsx` — página principal que monta seções (Header, Hero, Benefits, Gallery, About, Pricing, ContactForm, Footer)
+	- `components/` — componentes da landing (Header, Hero, Footer, etc.)
+	- `components/ui/` — primitives e wrappers UI reutilizáveis (shadcn)
+	- `lib/utils.ts` — helpers (ex: `cn` - classe utilitária)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Alias de import
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+O projeto usa alias `@` apontando para `src/`. Ex.: `import Header from "@/components/Header"`.
 
-Follow these steps:
+Configurações:
+- `tsconfig.json` -> `"@/*": ["./src/*"]`
+- `vite.config.ts` -> alias `@` para `src`
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Como rodar (PowerShell / Windows)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Pré-requisitos: Node.js (versão compatível), npm.
 
-# Step 3: Install the necessary dependencies.
+No PowerShell:
+
+```powershell
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Principais scripts (via `package.json`):
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `dev` — inicia servidor de desenvolvimento (Vite)
+- `build` — build de produção
+- `preview` — visualiza build localmente
+- `lint` — executa ESLint
 
-**Use GitHub Codespaces**
+## Boas práticas e dicas para desenvolvimento
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Use o alias `@` para evitar caminhos relativos longos.
+- Componentes UI estão em `components/ui/` (base para consistência visual). Siga o padrão desses componentes ao criar novos.
+- A maioria dos hooks e utilitários fica em `src/hooks` e `src/lib`.
 
-## What technologies are used for this project?
+## Sugestões rápidas (próximos passos)
 
-This project is built with:
+- Adicionar testes unitários/integração (Jest/Testing Library) para componentes críticos.
+- Configurar CI com lint + build para evitar regressões.
+- Melhorar SEO (meta tags dinâmicas, Open Graph) e adicionar markup semântico onde fizer sentido.
+- Verificar contraste/ACessibilidade (aria labels, roles, keyboard navigation) — header e botões já tem boa base, revisar formulários.
+- Adicionar validação e feedback no `ContactForm` (já existe react-hook-form nas dependências).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Contribuição
 
-## How can I deploy this project?
+- Faça um fork / branch e abra PR. Mantenha código formatado e com lint verde.
 
-Simply open [Lovable](https://lovable.dev/projects/c7109833-57df-4fed-8170-eff21c4edf69) and click on Share -> Publish.
+## Licença
 
-## Can I connect a custom domain to my Lovable project?
+Coloque aqui a licença do projeto (ex: MIT) se aplicável.
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Se quiser, eu posso também:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- gerar um arquivo `CONTRIBUTING.md` com instruções de trabalho e padrões de commit;
+- adicionar um script de preview mais amigável para Windows;
+- criar testes básicos para `Header` e `Hero`.
+
+Abaixo, envio um breve feedback de leitura do código e sugestões — veja seção "Feedback".

@@ -127,18 +127,18 @@ const ContactForm = () => {
             <p className="text-muted-foreground mb-4">Ou entre em contato diretamente:</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5515996500686"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-primary-dark transition-colors font-medium"
               >
-                📱 WhatsApp: (11) 99999-9999
+                📱 WhatsApp: (15) 99650-0686
               </a>
               <a
-                href="mailto:contato@weblocal.com.br"
+                href="mailto:musgri@uol.com.br"
                 className="text-primary hover:text-primary-dark transition-colors font-medium"
               >
-                ✉️ contato@weblocal.com.br
+                ✉️ musgroi@uol.com.br
               </a>
             </div>
           </div>

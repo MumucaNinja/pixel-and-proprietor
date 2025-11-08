@@ -106,15 +106,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-background/60" />
-                <span className="text-background/80">(11) 99999-9999</span>
+                <span className="text-background/80">(15) 99650-0686</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-background/60" />
                 <a
-                  href="mailto:contato@weblocal.com.br"
+                  href="mailto:musgroi@uol.com.br"
                   className="text-background/80 hover:text-background transition-colors"
                 >
-                  contato@weblocal.com.br
+                  musgroi@uol.com.br
                 </a>
               </li>
             </ul>
